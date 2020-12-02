@@ -9,7 +9,7 @@ function handleNotFound() {
         var linkListItem = document.createElement("li");
         var link = document.createElement("a");
         link.innerText = redirect.title;
-        link.href = origin + redirect.path;
+        link.href = origin + "/" + redirect.path;
         linkListItem.appendChild(link);
         linkList.appendChild(linkListItem);
     });
