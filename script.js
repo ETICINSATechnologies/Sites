@@ -1,21 +1,28 @@
 function handleNotFound(redirects) {
     var origin = window.location.origin;
     var infoDiv = document.getElementById("info");
-    var linkList = document.createElement("ul");
     infoDiv.innerText = "";
-    infoDiv.appendChild(linkList);
 
     redirects.forEach(redirect => {
-        var linkListItem = document.createElement("li");
         var link = document.createElement("a");
-        link.innerText = redirect.title;
+        var image = document.createElement("img");
+        var label = document.createElement("p");
+        link.className = "link";
+        link.title = redirect.title;
+        label.innerText = redirect.title;
+        if (redirect.image) {
+            image.src = redirect.image;
+        } else {
+            image.src = "images/etic.png";
+        }
         if (redirect.iframe === "TRUE") {
             link.href = origin + "/" + redirect.path;
         } else {
             link.href = redirect.to;
         }
-        linkListItem.appendChild(link);
-        linkList.appendChild(linkListItem);
+        link.appendChild(image);
+        link.appendChild(label);
+        infoDiv.appendChild(link);
     });
 }
 

@@ -2,7 +2,7 @@ var SHEET = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQZBEJXPFgPPfqjozh4
 
 var REDIRECTS = [
     {
-        path: "inscription", iframe: "FALSE", title: "Site d'Inscription", to: "https://site-inscription.etic-insa.com/",
+        path: "inscription", iframe: "FALSE", title: "Site d'Inscription", image: "images/inscription.svg", to: "https://site-inscription.etic-insa.com/",
     },
     {
         path: "keros", iframe: "FALSE", title: "KEROS", to: "https://keros.etic-insa.com/", 
