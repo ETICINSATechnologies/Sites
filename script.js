@@ -9,7 +9,7 @@ function handleNotFound(redirects) {
         var linkListItem = document.createElement("li");
         var link = document.createElement("a");
         link.innerText = redirect.title;
-        if (redirect.iframe==="TRUE") {
+        if (redirect.iframe === "TRUE") {
             link.href = origin + "/" + redirect.path;
         } else {
             link.href = redirect.to;
@@ -37,7 +37,7 @@ function handleRedirect(redirects) {
         path = path.split("/").pop(); //get string after last slash
         redirects.forEach(redirect => {
             if (path === redirect.path) {
-                if (redirect.iframe==="TRUE") {
+                if (redirect.iframe === "TRUE") {
                     toIframe(redirect);
                 } else {
                     window.location = redirect.to;
@@ -49,19 +49,25 @@ function handleRedirect(redirects) {
     } catch (error) {
         window.alert("Redirection error, please use a valid path")
     }
-    if (!found) handleNotFound(redirects);
+    return found;
 }
 
 function initialise() {
-    fetch(SHEET)
-        .then(response => response.text())
-        .then(data => {
-            var json = csvToJsonArray(data);
-            handleRedirect(json);
-        })
-        .catch((error) => {
-            console.error('Error fetching redirections sheet :', error);
-        });
+    // First look at the redirects in config.js then look at those in the Google Sheets if not found
+    if (!handleRedirect(REDIRECTS)) {
+        fetch(SHEET)
+            .then(response => response.text())
+            .then(data => {
+                var json = csvToJsonArray(data);
+                if (!handleRedirect(json)) {
+                    handleNotFound([...REDIRECTS, ...json]);
+                }
+            })
+            .catch((error) => {
+                console.error('Error fetching redirections sheet :', error);
+            });
+    }
+
 }
 
 initialise();
