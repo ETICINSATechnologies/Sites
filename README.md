@@ -10,8 +10,10 @@ Sites is a webpage that serves as a central hub to access ETIC's differents webs
 
 ### Normal usage
 
-To get list of links : [Links](https://sites.etic-insa.com/).
-To access the redirections : [IPA](https://sites.etic-insa.com/ipa), [Shop](https://sites.etic-insa.com/shop).
+https://sites.etic-insa.com/{path}. For example :
+- [IPA : https://sites.etic-insa.com/ipa](https://sites.etic-insa.com/ipa)
+- [ETIC Shop : https://sites.etic-insa.com/shop](https://sites.etic-insa.com/shop)
+
 
 ### Adding a new redirection
 
@@ -20,7 +22,7 @@ Adding the redirection directly into the config file will make the redirection m
 
 The `iframe` attribute controls whether the page will redirect to the target website or open the target inside of an iframe. Set it to TRUE (or VRAI in the Sheets) if you want the iframe option. Note that in the case of an app made with Google Apps Script, you need to allow it to be opened inside of an iframe [More info](https://developers.google.com/apps-script/reference/html/html-output#setXFrameOptionsMode(XFrameOptionsMode)).
 
-#### On GITHUB
+#### On Github
 
 1. Edit the `config.js` file on the master branch. The simplest way to do this is to edit the file directly on Github. Note that you might need writing rights on the repository to do this. [Edit config.js](https://github.com/ETICINSATechnologies/Sites/edit/main/config.js)
 2. Add the new redirection to the `REDIRECTS` table, making sure to replace all attributes. Make sure to respect javascript syntax ;) Syntax errors will cause the site to break (just follow the existing as example and it should be fine).
