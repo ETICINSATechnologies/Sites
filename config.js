@@ -1,6 +1,6 @@
 var REDIRECTS = [
     {
-        path: "/ipa", iframe: true, title: "IPA", image: "ipa.svg", to: "https://script.google.com/a/macros/etic-insa.com/s/AKfycbxusiq83fptfD3BmIyRhEluPs5h27zNXRjKqHaY9VKDQTrZlvPO/exec/",
+        path: "/ipa", iframe: false, title: "IPA", image: "ipa.svg", to: "https://script.google.com/a/macros/etic-insa.com/s/AKfycbxusiq83fptfD3BmIyRhEluPs5h27zNXRjKqHaY9VKDQTrZlvPO/exec/",
     },
     {
         path: "/inscription", iframe: false, title: "Site d'Inscription", to: "https://site-inscription.etic-insa.com/",
