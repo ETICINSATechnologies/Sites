@@ -27,7 +27,10 @@ function toIframe(redirect) {
 
 function initialise() {
     try {
-        var path = window.location.pathname.split("/").pop();
+        var path = window.location.pathname;
+        path = path.replace(/\/$/, ""); // remove trailing slash
+        path = path.split("/").pop(); //get string after last slash
+        .replace(/\/$/, "");
         REDIRECTS.forEach(redirect => {
             if (path === redirect.path) {
                 if (redirect.iframe) {
