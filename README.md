@@ -25,7 +25,7 @@ The `iframe` attribute controls whether the page will redirect to the target web
 #### Option 1 : Via Google Sheets
 
 1. Edit the assigned spreadsheet [Edit spreadsheet](https://docs.google.com/spreadsheets/d/1Zsp2m42jozEn5IIjhzrrxWNrF6KXk2i9FA07lPZEG8A/edit?usp=sharing)
-2. Add the new redirection to the sheet, making sure to replace all attributes.
+2. Add the new redirection to the sheet.
 3. Changes will be automatically saved
 5. Test that the site has been correctly updated, it might take 5-10 minutes for the spreadsheet to be published. You might need to clear the browser cache of the page to view the new version, Ctrl + Shift + R in most browsers. [Link](https://sites.etic-insa.com/).
 ![](screenshots/screenshot-3.png)
@@ -33,7 +33,7 @@ The `iframe` attribute controls whether the page will redirect to the target web
 #### Option 2 : On Github
 
 1. Edit the `config.js` file on the master branch. The simplest way to do this is to edit the file directly on Github. Note that you might need writing rights on the repository to do this. [Edit config.js](https://github.com/ETICINSATechnologies/Sites/edit/main/config.js)
-2. Add the new redirection to the `REDIRECTS` table, making sure to replace all attributes. Make sure to respect javascript syntax ;) Syntax errors will cause the site to break (just follow the existing as example and it should be fine).
+2. Add the new redirection to the `REDIRECTS` table. Make sure to respect javascript syntax ;) Syntax errors will cause the site to break (just follow the existing as example and it should be fine).
 ![](screenshots/github-add_product_2.png)
 3. Save the changes by clicking on 'Commit changes'.
 4. Test that the site has been correctly updated. You might need to clear the browser cache of the page to view the new version, Ctrl + Shift + R in most browsers. [Link](https://sites.etic-insa.com/).
