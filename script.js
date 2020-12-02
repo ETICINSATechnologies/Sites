@@ -28,21 +28,24 @@ function toIframe(redirect) {
 function initialise() {
     try {
         var path = window.location.pathname;
+        var found = false;
         path = path.replace(/\/$/, ""); // remove trailing slash
         path = path.split("/").pop(); //get string after last slash
         REDIRECTS.forEach(redirect => {
             if (path === redirect.path) {
                 if (redirect.iframe) {
-                    toIframe(redirect.path);
+                    toIframe(redirect);
                 } else {
-                    window.location = redirect.path;
+                    window.location = redirect.to;
                 }
+                found = true;
+                return;
             }
         });
     } catch (error) {
         window.alert("Redirection error, please use a valid path")
     }
-    handleNotFound();
+    if (!found) handleNotFound();
 }
 
 initialise();
